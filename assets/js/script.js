@@ -44,7 +44,7 @@ function futur(){
     frcst.empty();
     // frcst.prepend('<h1>'+'5 Day Forcast'+'</h1>')
     for(var x = 0; x < 5; x++){
-        frcst.append('<article class= testing'+ x +' syle = margin-left:10px>'+'</article>')
+        frcst.append('<article class="block testing'+ x +'" '+' syle = margin-left:10px>'+'</article>')
         // var wsh = $('.testing')
         // wsh.append( '<p>' + wthrobj.days[x]+'</p>');
         // wsh.append( '<p>' + wthrobj.temp[x]+'</p>');
@@ -57,7 +57,7 @@ function futur(){
     var wsh = $('.testing'+ x)
     var iconurl = 'http://openweathermap.org/img/w/'+ wthrobj.icons[x] +'.png'
     wsh.append( '<p syle = margin-left:10px>' + wthrobj.days[x]+'</p>');
-    wsh.append( '<p syle = margin-left:10px>' + wthrobj.temp[x]+'</p>');
+    // wsh.append( '<p syle = margin-left:10px>' + wthrobj.temp[x]+'</p>');
     wsh.append( '<img src ='+iconurl+'>' + wthrobj.temp[x]+'</img>');
     wsh.append( '<p syle = margin-left:10px>' +  wthrobj.windspeed[x]+'</p>');
     wsh.append( '<p syle = margin-left:10px>' +  wthrobj.humidity[x]+'</p>');
@@ -115,12 +115,12 @@ $.get('https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&u
         var imgcd = data.current.weather[0].icon;
         var iconurl = 'http://openweathermap.org/img/w/'+ imgcd +'.png'
 
-        swwthr.prepend('<p>'+ data.current.humidity+ '</p>')
-        swwthr.prepend('<p>'+ data.current.wind_speed+ 'MPH' + '</p>')
-        swwthr.prepend('<img src ='+iconurl+'>'+ '</img>')
-        swwthr.prepend('<p>'+ data.current.temp+ 'F'+'</p>')
-        swwthr.prepend('<p>'+ curday+ '</p>')
-        swwthr.prepend('<h2>'+ target+ '</h2>')
+        swwthr.prepend('<p>'+'Humidity: '+ data.current.humidity+ '%'+'</p>')
+        swwthr.prepend('<p>'+'Wind: '+ data.current.wind_speed+ 'MPH' + '</p>')
+        swwthr.prepend('<p>'+'Temp:'+ data.current.temp+ 'F'+'</p>')
+        // swwthr.prepend('<img src ='+iconurl+'>'+ '</img>')
+        // swwthr.prepend('<p>'+'('+ curday+')'+ '</p>')
+        swwthr.prepend('<h2>'+ target+' '+ '('+ curday+')'+ '<img src ='+iconurl+'>'+ '</img>'+'</h2>')
         
         // console.log(curday)
         // console.log(data.current.temp)

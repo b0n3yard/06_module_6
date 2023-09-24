@@ -73,11 +73,12 @@ function coords(plctext){
 // $.get("http://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f", function(data){
     // $(".result").html(data)
     $.ajax({
-        url: "https://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f",
-        dataType: 'json',
+        url: "https://api.api-ninjas.com/v1/geocoding?city="+ target,
+        headers: {'X-api-Key': 'bQQv3qWq5kHalNjh19VAPQ==OdFpPSD3HrbB6vz5'},
+        contentType: 'application/json',
         success:function(data){
-    var lat = data[0].lat;
-    var lon = data[0].lon;
+    var lat = data[0].latitude;
+    var lon = data[0].longitude;
     console.log(data)
     weather(lat,lon,data[0].name)
         }

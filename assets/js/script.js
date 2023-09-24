@@ -73,7 +73,7 @@ function coords(plctext){
 // $.get("http://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f", function(data){
     // $(".result").html(data)
     $.ajax({
-        url: "http://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f",
+        url: "https://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f",
         dataType: 'json',
         success:function(data){
     var lat = data[0].lat;

@@ -90,8 +90,11 @@ function test(){
 }
 
 function weather(lat, lon,target){
-$.get('https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid=83b0d84117b0611cf75759d190e0a63f', function(data){
-        
+// $.get('https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid=83b0d84117b0611cf75759d190e0a63f', function(data){
+    $.ajax({
+        url: 'https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid=83b0d84117b0611cf75759d190e0a63f',
+        dataType: 'json',
+        success:function(data){
         swwthr.empty();
         var date = new Date()
         day = date.getDate()
@@ -131,6 +134,7 @@ $.get('https://api.openweathermap.org/data/3.0/onecall?lat='+lat+'&lon='+lon+'&u
         test()
         futur()
         return wthrobj.temp;
+    }
 })
 
 

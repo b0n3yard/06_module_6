@@ -58,9 +58,9 @@ function futur(){
     var iconurl = 'http://openweathermap.org/img/w/'+ wthrobj.icons[x] +'.png'
     wsh.append( '<p syle = margin-left:10px>' + wthrobj.days[x]+'</p>');
     // wsh.append( '<p syle = margin-left:10px>' + wthrobj.temp[x]+'</p>');
-    wsh.append( '<img src ='+iconurl+'>' + wthrobj.temp[x]+'</img>');
-    wsh.append( '<p syle = margin-left:10px>' +  wthrobj.windspeed[x]+'</p>');
-    wsh.append( '<p syle = margin-left:10px>' +  wthrobj.humidity[x]+'</p>');
+    wsh.append( '<img src ='+iconurl+'>' + wthrobj.temp[x]+ ' F'+'</img>');
+    wsh.append( '<p syle = margin-left:10px>' +  wthrobj.windspeed[x]+ ' MPH' + '</p>');
+    wsh.append( '<p syle = margin-left:10px>' +  wthrobj.humidity[x]+ '%'+'</p>');
     }
 
 

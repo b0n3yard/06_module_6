@@ -38,10 +38,10 @@
     padding: 5px;
 }
 .showweather{
-    /* width: 50%; */
-    position: relative;
+    width: 110%;
+    position: absolute;
     left: 36%;
-    bottom: 224px;
+    bottom: 295px;
 }
 .showweather h1{
     position: relative;

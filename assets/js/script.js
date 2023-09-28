@@ -23,6 +23,11 @@ function bttns(e){
     coords(e.target.innerText)
 }
 function dsphis(){
+    hstry.empty();
+    console.log(locations)
+    nwret =  Array.from(new Set(locations))
+    locations = nwret
+    console.log(locations)
     for(x = 0; x <locations.length; x++){
         hstry.append('<p>'+locations[x]+'</p>')
         // console.log(locations[x])
@@ -69,6 +74,9 @@ function futur(){
 function coords(plctext){
     var target = plctext
     locations.push(plctext)
+    // console.log(locations)
+    // var test3 = locations.length -1
+    // hstry.append('<p>'+locations[test3]+'</p>')
     localStorage.setItem('history', JSON.stringify(locations))
 // $.get("http://api.openweathermap.org/geo/1.0/direct?q="+target+"&appid=83b0d84117b0611cf75759d190e0a63f", function(data){
     // $(".result").html(data)
@@ -138,6 +146,7 @@ function weather(lat, lon,target){
         localStorage.setItem('temp', data.current.temp )
         test()
         futur()
+        dsphis()
         return wthrobj.temp;
     }
 })
